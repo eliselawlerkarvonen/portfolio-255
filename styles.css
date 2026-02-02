@@ -1,27 +1,9 @@
-* { 
-  box-sizing: border-box; 
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
   color: #0b0b0b;
-}
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;           
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-}
-
-.grid > * { 
-  grid-column: span 12; 
 }
 
 img {
@@ -30,44 +12,64 @@ img {
   height: auto;
 }
 
+/* 1440 content, 12 column grid */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;          
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;                
+}
+
+
+.grid > * {
+  grid-column: span 12;
+}
+
 /* header */
-.header { 
-  border-bottom: 1px solid #e8e8e8; 
+.header {
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .header .grid {
   align-items: center;
-  padding: 14px;
+  padding: 14px 0;          
 }
 
-.brand { 
-  grid-column: 1 / span 2;
-  margin: 0; 
-  font-weight: 700; 
+.brand {
+  grid-column: 1 / span 6;  
+  margin: 0;
+  font-weight: 700;
+  padding-left: 20px;
 }
-.menu { 
-  grid-column: 12;
-  justify-self: end; 
+
+.menu {
+  grid-column: 7 / -1;      
+  justify-self: end;
   border: none;
   background: transparent;
   cursor: pointer;
-  position: relative;
 }
 
 /* hero */
-.hero { 
-  padding: 28px 0; 
+.hero {
+  padding: 28px 0;
 }
+
 .hero-title {
-  grid-column: span 12;
   margin: 0;
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: 0.02em;
   font-size: clamp(44px, 10vw, 84px);
 }
+
+/* mobile, avatar goes under title */
 .avatar {
-  grid-column: span 12;
   width: 110px;
   height: 110px;
   border-radius: 999px;
@@ -76,22 +78,24 @@ img {
   align-self: start;
 }
 
-.email { 
-  margin: 0; 
-  font-size: 14px; 
+.email {
+  margin: 0;
+  margin-top: 40px;
+  font-size: 14px;
 }
-.intro { 
-  grid-column: 4 / span 9;
-  text-align: right;
-  margin: 0; 
-  font-weight: 700; 
-  max-width: 65ch; 
+
+.intro {
+  margin: 0;
+  margin-top: 40px;
+  font-weight: 700;
+  max-width: 65ch;
+  text-align: right;         
 }
 
 /* work */
-.work { 
-  border-top: 1px solid #e8e8e8; 
-  padding: 24px 0; 
+.work {
+  border-top: 1px solid #e8e8e8;
+  padding: 24px 0;
 }
 
 .work-head {
@@ -99,31 +103,33 @@ img {
   align-items: baseline;
   justify-content: space-between;
 }
-.work-head h2 { 
-  margin: 0; 
-}
-.show-more { 
-  padding: 10px 14px; 
-  border: 0; 
-  background: #f2f2f2; 
+
+.work-head h2 { margin: 0; }
+
+.show-more {
+  padding: 10px 14px;
+  border: 0;
+  background: #f2f2f2;
 }
 
-/* cards */
-.project .img {
+/* project */
+.project h4 { margin: 10px 0 6px; }
+
+.project p {
+  margin: 0;
+  color: #444;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+.project-img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #dcdcdc;
-}
-.project h4 { 
-  margin: 10px 0 6px; 
+  height: auto;
+  object-fit: contain;
 }
 
-.project p { 
-  margin: 0; 
-  color: #444; 
-  font-size: 13px; 
-  line-height: 1.45; }
-
+/* illustrations */
 .illustrations {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -136,8 +142,8 @@ img {
   padding: 28px 0; 
 }
 
-.about h2 {
-   margin: 0; 
+.about h2 { 
+  margin: 0; 
 }
 
 .tag {
@@ -147,6 +153,7 @@ img {
   padding: 10px 14px;
   font-weight: 600;
   margin: 14px 0;
+  text-align: right;
 }
 
 /* contact */
@@ -154,12 +161,13 @@ img {
   padding: 28px 0; 
 }
 
-.contact h2 {
+.contact h2 { 
   margin: 0; 
 }
 
-.contact-item { 
-  margin: 10px 0 0; font-weight: 700;
+.contact-item {
+  margin: 10px 0 0;
+  font-weight: 700;
 }
 
 /* footer */
@@ -168,5 +176,43 @@ img {
   text-align: center;
   padding: 40px 0;
   font-weight: 700;
+}
+
+
+/* desktop */
+@media (min-width: 900px) {
+  .hero-title {
+    grid-column: 1 / span 9;
+  }
+
+  .avatar {
+    grid-column: 10 / span 3;
+    justify-self: end;
+    width: clamp(140px, 12vw, 200px);
+    height: clamp(140px, 12vw, 200px);
+  }
+
+  .email {
+    grid-column: 1 / span 3;
+  }
+
+  .intro {
+    grid-column: 3 / -1;
+    max-width: none;       
+    width: 100%;
+    text-align: right;
+  }
+
+  .project {
+    grid-column: span 6;
+  }
+
+  .illustrations {
+    grid-column: span 4;
+  }
+
+  .contact-item {
+    grid-column: span 6;
+  }
 }
 
