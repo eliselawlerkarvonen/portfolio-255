@@ -6,7 +6,6 @@
   --gap: 20px;
   --border: #e8e8e8;
   --text: #0b0b0b;
-  --muted: #444;
   --panel: #f2f2f2;
 }
 
@@ -71,46 +70,56 @@ img{
 .hero .grid{
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  column-gap: var(--gap);
-  row-gap: var(--gap);
+  gap: 20px;
+  align-items: start;
 }
 
-.hero-title{
+/* hero */
+.hero-title {
   grid-column: 1;
+  grid-row: 1;
   margin: 0;
   font-weight: 800;
-  font-size: clamp(2.5rem, 6.2vw, 8.75rem); /* maybe tune this*/
   line-height: 0.95;
   letter-spacing: 0.02em;
   min-width: 0;
+  font-size: clamp(2rem, 7.5vw, 4.2rem);
 }
 
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* avatar */
 .avatar{
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
   align-self: start;
-  width: clamp(84px, 18vw, 140px);
-  height: clamp(84px, 18vw, 140px);
   border-radius: 999px;
   object-fit: cover;
+  width: clamp(88px, 22vw, 140px);
+  height: clamp(88px, 22vw, 140px);
 }
 
 .email{
   grid-column: 1 / -1;
-  margin: 0;
-  margin-top: 40px;
+  grid-row: 2;
+  margin: 40px 0 0;
   font-size: 14px;
 }
 
+
 .intro{
   grid-column: 1 / -1;
-  margin: 0;
-  margin-top: 40px;
-  font-weight: 700;
-  max-width: 65ch;
+  grid-row: 3;
+  margin: 40px 0 0;
+  max-width: 75ch;
+  justify-self: end;
   text-align: right;
-  font-size: clamp(1.05rem, 2vw, 1.6rem); /* maybe tune this too */
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.6rem);
 }
 
 /* work */
@@ -129,6 +138,7 @@ img{
 
 .work-head h2{
   margin: 0;
+  font-size: 28px;
 }
 
 .show-more{
@@ -140,7 +150,6 @@ img{
 
 .subhead{
   margin: 0;
-  font-weight: 800;
 }
 
 /* projects */
@@ -170,7 +179,7 @@ img{
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  background: #dcdcdc;
+
 }
 
 /* about */
@@ -217,18 +226,21 @@ img{
 /* desktop */
 @media (min-width: 900px){
   /* Hero stays 2 columns, only scale avatar up */
+  .hero-title{
+    font-size: clamp(3rem, 6vw, 8.75rem);
+  }
+
   .avatar{
-    width: clamp(140px, 12vw, 200px);
-    height: clamp(140px, 12vw, 200px);
+    width: clamp(140px, 12vw, 220px);
+    height: clamp(140px, 12vw, 220px);
   }
 
   .email{
-    grid-column: 1 / span 3;
-    margin-top: 40px;
+    justify-self: start;
   }
 
   .intro{
-    grid-column: 3 / -1;
+    grid-column: 7 / -1;
     max-width: none;
     width: 100%;
     text-align: right;
