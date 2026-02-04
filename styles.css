@@ -89,6 +89,8 @@ img{
 .hero-line {
   display: block;
   white-space: nowrap;
+  line-height: 1.2;
+  
 }
 
 /* avatar */
