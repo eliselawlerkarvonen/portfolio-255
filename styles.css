@@ -164,8 +164,8 @@ img{
 
 .project-img{
   width: 100%;
-  aspect-ratio: 16 / 9;   /* pick what fits your thumbnails */
-  object-fit: cover;      /* or contain if you must, but alignment is harder */
+  aspect-ratio: 16 / 9;  
+  object-fit: cover;      
   height: auto;
 }
 
