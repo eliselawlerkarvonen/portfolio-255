@@ -155,18 +155,22 @@ img{
 }
 
 /* projects */
-.project{
-  grid-column: span 12;
+.project {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+  align-content: start;
 }
 
 .project-img{
   width: 100%;
+  aspect-ratio: 16 / 9;   /* pick what fits your thumbnails */
+  object-fit: cover;      /* or contain if you must, but alignment is harder */
   height: auto;
-  object-fit: contain;
 }
 
 .project h4{
-  margin: 10px 0 6px;
+  margin: 16px 0 9px;
 }
 
 .project p{
