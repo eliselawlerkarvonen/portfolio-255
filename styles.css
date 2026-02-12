@@ -88,7 +88,6 @@ img{
 
 .hero-line {
   display: block;
-  white-space: nowrap;
   line-height: 1.2;
   
 }
@@ -99,10 +98,11 @@ img{
   grid-row: 1;
   justify-self: end;
   align-self: start;
-  border-radius: 999px;
-  object-fit: cover;
   width: clamp(88px, 22vw, 140px);
-  height: clamp(88px, 22vw, 140px);
+  aspect-ratio: 3 / 4;   /* ← this creates the oval */
+  border-radius: 50%;
+  object-fit: cover;
+
 }
 
 .email{
@@ -231,25 +231,31 @@ img{
 
 /* desktop */
 @media (min-width: 900px){
-  /* Hero stays 2 columns, only scale avatar up */
+   .hero .grid{
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+    align-items: start;
+  }
+
   .hero-title{
-    font-size: clamp(3rem, 6vw, 8.75rem);
+    grid-column: 1 / 10;
+    grid-row: 1;
   }
 
   .avatar{
-    width: clamp(140px, 12vw, 220px);
-    height: clamp(140px, 12vw, 220px);
+    grid-column: 10 / -1;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .email{
-    justify-self: start;
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .intro{
     grid-column: 7 / -1;
-    max-width: none;
-    width: 100%;
-    text-align: right;
+    grid-row: 3;
   }
 
   /* Work grid items */
