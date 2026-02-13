@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box;
+ }
 
 :root{
   --max: 1440px;
@@ -6,6 +8,7 @@
   --gap: 20px;
   --border: #e8e8e8;
   --text: #0b0b0b;
+  --muted: #444; 
   --panel: #f2f2f2;
 }
 
@@ -72,6 +75,7 @@ img{
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 20px;
   align-items: start;
+  row-gap: 40px;
 }
 
 /* hero */
@@ -99,7 +103,8 @@ img{
   justify-self: end;
   align-self: start;
   width: clamp(88px, 22vw, 140px);
-  aspect-ratio: 3 / 4;   /* ← this creates the oval */
+  height: auto;
+  aspect-ratio: 3 / 4;
   border-radius: 50%;
   object-fit: cover;
 
@@ -108,20 +113,21 @@ img{
 .email{
   grid-column: 1 / -1;
   grid-row: 2;
-  margin: 40px 0 0;
+  margin: 0;
+  align-self: end;
   font-size: 14px;
 }
 
 
-.intro{
+.intro {
   grid-column: 1 / -1;
   grid-row: 3;
-  margin: 40px 0 0;
-  max-width: 75ch;
+  margin: 0;
   justify-self: end;
   text-align: right;
+  max-width: 50ch;
   font-weight: 700;
-  font-size: clamp(1.05rem, 2vw, 1.6rem);
+  align-self: end;
 }
 
 /* work */
@@ -229,12 +235,50 @@ img{
   font-weight: 700;
 }
 
+@media (max-width: 899px) {
+  .hero .grid {
+        grid-template-columns: minmax(0, 1fr) auto; /* keep 2 columns */
+    column-gap: 20px;
+    row-gap: 40px;
+    align-items: start;
+  }
+
+  .hero-title { 
+    grid-column: 1; 
+    grid-row: 1; 
+  }
+
+  .avatar { 
+    grid-column: 2; 
+    grid-row: 1; 
+    justify-self: end; 
+  }
+
+  .intro { 
+    grid-column: 1 / -1;  
+    grid-row: 2;
+    margin: 0;
+    justify-self: end;
+    text-align: right;
+    max-width: 50ch;
+  }
+  .email { 
+    grid-column: 1 / -1;  
+    grid-row: 3;
+    margin: 0;
+    justify-self: start;
+    text-align: left; 
+  }
+}
+
+
 /* desktop */
 @media (min-width: 900px){
    .hero .grid{
     grid-template-columns: repeat(12, 1fr);
     column-gap: 20px;
     align-items: start;
+    row-gap: 40px;
   }
 
   .hero-title{
@@ -246,16 +290,26 @@ img{
     grid-column: 10 / -1;
     grid-row: 1;
     justify-self: end;
+    width: clamp(140px, 12vw, 220px);
+    aspect-ratio: 3 / 4;
   }
 
   .email{
-    grid-column: 1 / -1;
-    grid-row: 2;
+    grid-column: 1 / 6;
+    grid-row: 3;
+    margin: 0;
+    align-self: end;
   }
 
-  .intro{
-    grid-column: 7 / -1;
+   .intro{
+    grid-column: 5 / -1;
     grid-row: 3;
+    margin: 0;
+    justify-self: end;
+    text-align: right;
+    align-self: end;
+    max-width: none;
+    width: 100%;
   }
 
   /* Work grid items */
