@@ -87,7 +87,7 @@ img{
   line-height: 0.95;
   letter-spacing: 0.02em;
   min-width: 0;
-  font-size: clamp(2rem, 7.5vw, 4.2rem);
+  font-size: clamp(2.5rem, 9vw, 6rem);
 }
 
 .hero-line {
@@ -116,6 +116,7 @@ img{
   margin: 0;
   align-self: end;
   font-size: 14px;
+  overflow-wrap: anywhere;
 }
 
 
@@ -128,6 +129,8 @@ img{
   max-width: 50ch;
   font-weight: 700;
   align-self: end;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  line-height: 1.4;
 }
 
 /* work */
@@ -237,7 +240,7 @@ img{
 
 @media (max-width: 899px) {
   .hero .grid {
-        grid-template-columns: minmax(0, 1fr) auto; /* keep 2 columns */
+    grid-template-columns: minmax(0, 1fr) auto; /* keep 2 columns */
     column-gap: 20px;
     row-gap: 40px;
     align-items: start;
@@ -284,6 +287,7 @@ img{
   .hero-title{
     grid-column: 1 / 10;
     grid-row: 1;
+    font-size: clamp(3rem, 6vw, 7rem)
   }
 
   .avatar{
