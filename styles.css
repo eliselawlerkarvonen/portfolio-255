@@ -136,32 +136,24 @@ img{
 /* work */
 .work{
   border-top: 1px solid var(--border);
-  padding: 24px 0;
+  padding: 24px 0 60px;
 }
 
-.work-head{
+.work-head {
   grid-column: 1 / -1;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
   margin-bottom: 6px;
-
 }
 
 .work-head h2{
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  margin-bottom: 6px;
+  margin: 0;
 }
 
-.show-more{
-  padding: 10px 14px;
-  border: 0;
-  background: var(--panel);
-  cursor: pointer;
-}
 
 .subhead{
   padding-top: 16px;
@@ -257,6 +249,18 @@ img{
 .contact-item{
   margin: 10px 0 0;
   font-weight: 700;
+}
+
+.linkedin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.linkedin-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 /* footer */
