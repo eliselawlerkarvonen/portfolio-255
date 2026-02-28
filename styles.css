@@ -14,7 +14,7 @@
 
 body{
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: var(--text);
 }
 
@@ -217,16 +217,28 @@ img{
   letter-spacing: -0.01em;
 }
 
-.tag {
+.about-text {
   grid-column: 1 / -1;
-  color: var(--text);
-  padding: 24px;
-  margin: 20px 0;
+  text-align: right;
+  max-width: 80ch;
+  margin-top: 24px;
+  justify-self: end;
+}
+
+.about-lead {
+  margin: 0 0 28px 0;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  line-height: 1.5;
   font-weight: 500;
-  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.about-sub {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
   line-height: 1.6;
-  letter-spacing: 0;
-  text-align: left;
+  color: #6a6a6a;
 }
 
 /* contact */
@@ -345,5 +357,10 @@ img{
 
   .contact-item{
     grid-column: span 6;
+  }
+
+  /* about */ 
+  .about-text {
+    grid-column: 4 / -1; /* spans 6 columns */
   }
 }
