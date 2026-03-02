@@ -299,6 +299,120 @@ img{
   font-weight: 700;
 }
 
+/* project hero */
+
+.project-hero{
+  padding: 60px 0 80px;
+}
+
+.project-meta{
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+.meta-label{
+  margin: 0;
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+.meta-value{
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.project-title{
+  grid-column: 1 / 10;
+  margin: 0 0 60px 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.project-visual{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+.project-visual img{
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+
+/* intro */
+
+.project-intro{
+  padding: 40px 0 80px;
+}
+
+.intro-title{
+  grid-column: 1 / -1;
+  margin: 0 0 18px 0;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.intro-body{
+  grid-column: 1 / -1;
+}
+
+.intro-body p{
+  margin: 0 0 16px 0;
+  line-height: 1.7;
+  color: #2b2b2b;
+}
+
+.intro-tags{
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 14px;
+  margin: 18px 0 36px;
+}
+
+.intro-actions{
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin: 32px 0 48px;
+}
+
+.project-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #0b0b0b;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.project-btn:hover{
+  background: #6d6d6d;
+}
+
+.intro-visual{
+  grid-column: 1 / -1;
+}
+
+.intro-visual img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Media Querys */
+
 @media (max-width: 899px) {
 
   .hero .grid {
@@ -335,10 +449,20 @@ img{
     text-align: left; 
   }
 
+    .project-meta{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-title{
+    grid-column: 1 / -1;
+  }
+
 }
 
 
 /* desktop */
+
 @media (min-width: 900px){
 
   .nav{
@@ -409,4 +533,19 @@ img{
   .about-text {
     grid-column: 4 / -1; /* spans 6 columns */
   }
+
+  /* Projects */
+  .intro-title{
+  grid-column: 1 / -1;
+}
+
+.intro-body{
+  grid-column: 1 / -1;
+}
+
+  .intro-actions{
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
 }
