@@ -51,18 +51,46 @@ img{
   padding: 14px 0;
 }
 
+/* Brand */
 .brand{
   grid-column: 1 / span 6;
   margin: 0;
   font-weight: 700;
 }
 
-.menu{
+/* Navigation */
+.nav{
   grid-column: 7 / -1;
   justify-self: end;
+  display: none;
+  gap: 28px;
+  align-items: center;
+}
+
+.menu-toggle{
+  display: block;
+  grid-column: 7 / -1;
+  justify-self: end;
+  align-self: center;
   border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+.menu-icon{
+  width: 22px;
+  height: auto;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
 }
 
 .hero{
@@ -272,6 +300,7 @@ img{
 }
 
 @media (max-width: 899px) {
+
   .hero .grid {
     grid-template-columns: minmax(0, 1fr) auto; /* keep 2 columns */
     column-gap: 20px;
@@ -311,6 +340,19 @@ img{
 
 /* desktop */
 @media (min-width: 900px){
+
+  .nav{
+  display: flex;
+  grid-column: 7 / -1;
+  justify-self: end;
+  gap: 28px;
+  align-items: center;
+  }
+
+.menu-toggle{
+  display: none;
+  }
+
    .hero .grid{
     grid-template-columns: repeat(12, 1fr);
     column-gap: 20px;

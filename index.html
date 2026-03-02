@@ -13,11 +13,22 @@
 </head>
    <body>
     <header class="header">
-      <div class="container grid">
-        <p class="brand">ELISE</p>
-        <button class="menu" type="button">Menu</button>
-      </div>
-    </header>
+  <div class="container grid header-inner">
+    <p class="brand">ELISE</p>
+
+<!--desktop nav-->
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+<!--mobile nav-->
+    <button class="menu-toggle" aria-label="Open menu">
+      <img src="Images/menu_mobile.png" alt="" class="menu-icon">
+    </button>
+  </div>
+</header>
 
     <main>
 
@@ -42,7 +53,7 @@
       </section>
 
 <!-- work -->
-      <section class="work">
+      <section class="work" id="work">
         <div class="container grid">
           <div class="work-head">
             <h2>work.</h2>
@@ -56,11 +67,11 @@
             <p>Project for Karolinskas university hospital. Discovered, defined, developed and delivered method books for CT, MR, childrens hospital and nuclear medicine.</p>
           </article>
 
-          <article class="project">
+          <a href="allpaws.html" class="project">
             <img class="project-img" src="Images/AllPawsMatter_Mockup.png" alt="All Paws Matter Project thumbnail">
             <h4>All Paws Matter</h4>
             <p>UX/UI app design project about adopting dogs from voluntary organizations.</p>
-          </article>
+          </a>
 
           <h3 class="subhead">illustrations.</h3>
 
@@ -71,7 +82,7 @@
       </section>
 
 <!-- about me -->
-<section class="about">
+<section class="about" id="about">
   <div class="container grid">
     <h2>about.</h2>
 
@@ -89,7 +100,7 @@
 </section>
 
 <!-- contact -->
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="container grid">
           <h2>contact.</h2>
 
